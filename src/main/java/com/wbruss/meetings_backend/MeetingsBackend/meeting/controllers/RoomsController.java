@@ -1,7 +1,7 @@
-package com.wbruss.meetings_backend.MeetingsBackend.controllers;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.controllers;
 
-import com.wbruss.meetings_backend.MeetingsBackend.data.entity.RoomsEntity;
-import com.wbruss.meetings_backend.MeetingsBackend.data.repository.jpa.RoomsRepositoryJPA;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity.RoomsEntity;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.repository.jpa.RoomsRepositoryJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,20 +1,18 @@
-package com.wbruss.meetings_backend.MeetingsBackend.services;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.services;
 
-import com.wbruss.meetings_backend.MeetingsBackend.data.dto.MeetingsEntityDto;
-import com.wbruss.meetings_backend.MeetingsBackend.data.dto.MeetingsEntityDtoConverter;
-import com.wbruss.meetings_backend.MeetingsBackend.data.entity.MeetingObj;
-import com.wbruss.meetings_backend.MeetingsBackend.data.entity.MeetingsEntity;
-import com.wbruss.meetings_backend.MeetingsBackend.data.entity.RoomsEntity;
-import com.wbruss.meetings_backend.MeetingsBackend.data.repository.MeetingsRepository;
-import com.wbruss.meetings_backend.MeetingsBackend.data.repository.jpa.MeetingsRepositoryJPA;
-import com.wbruss.meetings_backend.MeetingsBackend.data.repository.jpa.RoomsRepositoryJPA;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.dto.MeetingsEntityDto;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.dto.MeetingsEntityDtoConverter;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity.MeetingsEntity;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity.RoomsEntity;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.repository.MeetingsRepository;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.repository.jpa.MeetingsRepositoryJPA;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.repository.jpa.RoomsRepositoryJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -92,5 +90,14 @@ public class MeetingsService implements MeetingsRepository {
         MeetingsEntityDto meetingsEntityDto = new MeetingsEntityDtoConverter().meetingsEntityToMeetingsEntityDtoMapper(meetingsRepositoryJPA.save(meetingsEntity));
 
         return meetingsEntityDto;
+    }
+
+    public MeetingsEntityDto deleteMeeting(Long id) {
+        Optional<MeetingsEntity> roomsEntity = meetingsRepositoryJPA.findById(id);
+        if(!roomsEntity.isPresent()){
+            return new MeetingsEntityDto();
+        }
+        meetingsRepositoryJPA.deleteById(id);
+        return new MeetingsEntityDtoConverter().meetingsEntityToMeetingsEntityDtoMapper(roomsEntity.get());
     }
 }

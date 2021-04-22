@@ -1,4 +1,4 @@
-package com.wbruss.meetings_backend.MeetingsBackend.data.entity;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -36,6 +36,8 @@ public class MeetingsEntity {
     @ManyToOne
     @JoinColumn(name = "venue", nullable = false)
     private RoomsEntity room_id;
+
+
 
     public MeetingsEntity() {
     }

@@ -1,7 +1,4 @@
-package com.wbruss.meetings_backend.MeetingsBackend.data.entity;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity;
 
 public class MeetingObj extends MeetingsEntity{
     private long id;

@@ -1,7 +1,7 @@
-package com.wbruss.meetings_backend.MeetingsBackend.data.dto;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.data.dto;
 
-import com.wbruss.meetings_backend.MeetingsBackend.data.entity.MeetingsEntity;
-import com.wbruss.meetings_backend.MeetingsBackend.data.repository.jpa.MeetingsRepositoryJPA;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity.MeetingsEntity;
+import com.wbruss.meetings_backend.MeetingsBackend.meeting.data.repository.jpa.MeetingsRepositoryJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class MeetingsEntityDtoConverter {

@@ -1,8 +1,7 @@
-package com.wbruss.meetings_backend.MeetingsBackend.data.entity;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.data.entity;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class RoomsEntity {

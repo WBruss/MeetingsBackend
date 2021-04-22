@@ -1,4 +1,4 @@
-package com.wbruss.meetings_backend.MeetingsBackend.data.dto;
+package com.wbruss.meetings_backend.MeetingsBackend.meeting.data.dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
